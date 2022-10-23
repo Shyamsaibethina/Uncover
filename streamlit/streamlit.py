@@ -1,18 +1,17 @@
 import base64
 import glob
+import json
 import os
 import pickle
 from pathlib import Path
-from yaml import load, SafeLoader
+
+import altair as alt
 import numpy as np
 import pandas as pd
 import sounddevice as sd
 import streamlit_authenticator as stauth
 import wavio
-import glob
-import os
-import convokit_processing.scores as scores
-import altair as alt
+from yaml import SafeLoader, load
 
 import convokit_processing.scores as scores
 import streamlit as st
@@ -91,11 +90,18 @@ if __name__ == "__main__":
 
         file = st.file_uploader(label="Upload MP3 file")
 
-        st.markdown(f"<h4 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Audio recording length (seconds):</h5>", unsafe_allow_html=True)
-        duration = st.select_slider("Choose a length for the recording",
-                    options=range(1,60))
+        st.markdown(
+            f"<h4 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Audio recording length (seconds):</h5>",
+            unsafe_allow_html=True,
+        )
+        duration = st.select_slider(
+            "Choose a length for the recording", options=range(1, 60)
+        )
 
-        st.markdown(f"<h4 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Click button to record audio</h5>", unsafe_allow_html=True)
+        st.markdown(
+            f"<h4 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Click button to record audio</h5>",
+            unsafe_allow_html=True,
+        )
 
         if st.button("Click to record"):
             if filename == "":
@@ -110,10 +116,12 @@ if __name__ == "__main__":
 
                 save_record(path_myrecording, myrecording, fs)
                 record_state.text(f"Done! Saved sample as {filename}.mp3")
-        
-        os.path.join("streamlit/samples", filename)
-        st.markdown("<hr style='height:1px;border:none;color: gray;background-color:#333;' /> ", unsafe_allow_html=True)
 
+        os.path.join("streamlit/samples", filename)
+        st.markdown(
+            "<hr style='height:1px;border:none;color: gray;background-color:#333;' /> ",
+            unsafe_allow_html=True,
+        )
 
         audio_folder = "streamlit\samples"
         filenames = glob.glob(os.path.join(audio_folder, "*.mp3"))
@@ -129,23 +137,28 @@ if __name__ == "__main__":
             # chart = alt.Chart(df).mark_bar().encode(
             #     x=, y=, size= , color= , tootip=
             # )
-            #st.altair_chart(chart)
-            
-            st.bar_chart(df, x='Sai')
-            
-            
+            # st.altair_chart(chart)
 
-        st.markdown(f"<h2 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Team Acme Summary:</h2>", unsafe_allow_html=True)
-        
-        names = ['Chinar', 'Teja', 'Christian', 'Sai']
-        data = [[1, -0.546456], [2, .06536], [3, .464574]]
-        chart_data = pd.DataFrame(data, columns=['Conversation_Id', 'Politeness'])
+            st.bar_chart(df, x="Sai")
+
+        st.markdown(
+            f"<h2 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Team Acme Summary:</h2>",
+            unsafe_allow_html=True,
+        )
+
+        employees = json.load(open("employees.json"))
+        names = [employee["name"] for employee in employees]
+        data = [employee["data"] for employee in employees]
+        chart_data = pd.DataFrame(data, columns=["Conversation_Id", "Politeness"])
         for name in names:
-            st.markdown(f"<h5 style='text-align: middle; color: black; margin-left: -3px'><FONT COLOR='#48064c'>{name}</h5>", unsafe_allow_html=True)
+            st.markdown(
+                f"<h5 style='text-align: middle; color: black; margin-left: -3px'><FONT COLOR='#48064c'>{name}</h5>",
+                unsafe_allow_html=True,
+            )
             # chart = alt.Chart(chart_data).mark_bar().encode(
             #     x='0', y='1'
             # )
-            st.bar_chart(chart_data, x='Conversation_Id', y='Politeness')
+            st.bar_chart(chart_data, x="Conversation_Id", y="Politeness")
             st.text_area(f"Notes about {name}")
             st.markdown(
                 "<hr style='height:1px;border:none;color: gray;background-color:#333;' /> ",
