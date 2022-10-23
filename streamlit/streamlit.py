@@ -61,7 +61,7 @@ if __name__ == '__main__':
         return None
 
     placeholder = st.empty()
-    placeholder.markdown(img_to_htmlTitle('streamlit/title.jpeg'), unsafe_allow_html=True)
+    placeholder.markdown(img_to_htmlTitle('streamlit/assets/title.jpeg'), unsafe_allow_html=True)
 
     # Creates login widget
     name, authentication_status, username = authenticator.login("Login", "main")
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     # If auth is successful, display the home page
     if st.session_state["authentication_status"]:
 
-        placeholder.markdown(img_to_htmlWelcome('streamlit/saiProfile.png'), unsafe_allow_html=True)
+        placeholder.markdown(img_to_htmlWelcome('streamlit/assets/saiProfile.png'), unsafe_allow_html=True)
         name = st.session_state["name"]
 
         # Section to record and analyze audio
