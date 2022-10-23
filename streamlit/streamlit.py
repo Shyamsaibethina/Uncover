@@ -134,9 +134,16 @@ if __name__ == "__main__":
 
         if st.button("Analyze"):
             df = scores.get_scores_from_audio(selected_filename, speaker_1, speaker_2)            
+            st.markdown(
+            f"<h4 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Your results:</h5>",
+            unsafe_allow_html=True,
+        )
             st.bar_chart(df)
             
-            
+        st.markdown(
+            "<hr style='height:1px;border:none;color: gray;background-color:#333;' /> ",
+            unsafe_allow_html=True,
+        )
 
         st.markdown(f"<h2 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Team Acme Summary:</h2>", unsafe_allow_html=True)
         

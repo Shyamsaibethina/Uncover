@@ -1,12 +1,9 @@
 import json
-<<<<<<< HEAD
 import pandas as pd
 try:
     import convokit_processing.conversation as conversation
 except:
     import conversation
-=======
->>>>>>> 3f92c8732c9b5541042aaa63c48727001d42db13
 from pathlib import Path
 
 import pandas as pd
@@ -48,18 +45,9 @@ def speech_transcript_to_corpus(filename):
 def getPolitenessScores(corpus, uid):
     ps = PolitenessStrategies()
     data = ps.summarize(corpus, lambda utt: utt.speaker.id == uid)
-<<<<<<< HEAD
     politeness = data["feature_politeness_==HASPOSITIVE=="] - data["feature_politeness_==HASNEGATIVE=="]
     data._set_value("politeness", politeness)
     return data #politeness
-=======
-    politeness = (
-        data["feature_politeness_==HASPOSITIVE=="]
-        - data["feature_politeness_==HASNEGATIVE=="]
-    )
-    return data  # politeness
-
->>>>>>> 3f92c8732c9b5541042aaa63c48727001d42db13
 
 def getCoordinationScore(corpus, speakerid, targetid=None):
     coord = Coordination()
@@ -99,17 +87,9 @@ def processCorpus(corpus):
     corpus = coord.fit_transform(corpus)
     return corpus
 
-<<<<<<< HEAD
 def get_scores_from_audio(filename: Path, name1="1", name2="2"):
     #conversation.dump_transcript(filename, Path("convokit/transcripts/output.json"))
     corpus = conversation.assemble_corpus(Path("convokit_processing/transcripts/output.json"))
-=======
-
-def get_scores_from_audio(filename: Path):
-    corpus = conversation.assemble_corpus(
-        Path("convokit_processing/transcripts/output.json")
-    )
->>>>>>> 3f92c8732c9b5541042aaa63c48727001d42db13
     corpus = processCorpus(corpus)
     pscore1 = getPolitenessScores(corpus, "1")
     pscore2 = getPolitenessScores(corpus, "2")
