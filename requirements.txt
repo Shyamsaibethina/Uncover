@@ -1,0 +1,8 @@
+pandas
+convokit
+google-cloud-speech
+pydub
+altair
+numpy
+sounddevice
+streamlit
