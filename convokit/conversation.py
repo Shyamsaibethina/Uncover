@@ -55,8 +55,8 @@ def assemble_corpus(out_file: Path) -> Corpus:
     return Corpus.from_pandas(df)
 
 if __name__ == "__main__":
-  in_file = Path("long.wav")
-  out_file = Path("output.json")
+  in_file = Path("audio/long.wav")
+  out_file = Path("transcripts/output.json")
 
   if not out_file.exists():
     dump_transcript(in_file, out_file)
