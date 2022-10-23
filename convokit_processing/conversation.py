@@ -39,24 +39,23 @@ def dump_transcript(in_file: Path, out_file: Path) -> None:
             }
         )
 
-    with output.open("w") as f:
+    with out_file.open("w") as f:
         json.dump(conversation, f, indent=2)
 
 def assemble_corpus(out_file: Path) -> Corpus:
-  """Assemble corpus from annotated transcript"""
-    conversation = json.load(out_file.open())
-
+    """Assemble corpus from annotated transcript"""
+    conversation = json.load(out_file.open())   
     df = pd.DataFrame(conversation)
     df["id"] = df.index
     df["speaker"] = df["speaker"].astype(str)
     df["reply_to"] = df.apply(lambda x: "2" if x["speaker"] == "1" else "1", axis=1)
-    df["conversation_id"] = 1
-
+    df["conversation_id"] = 1   
+    df.rename(columns={"word":"text", "start":"timestamp"}, inplace=True)
     return Corpus.from_pandas(df)
 
 if __name__ == "__main__":
-  in_file = Path("long.wav")
-  out_file = Path("output.json")
+  in_file = Path("audio/long.wav")
+  out_file = Path("transcripts/output.json")
 
   if not out_file.exists():
     dump_transcript(in_file, out_file)

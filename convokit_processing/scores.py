@@ -1,15 +1,15 @@
-from audioop import avg
 from convokit import Corpus, Speaker, Utterance
 from convokit import download
 from convokit import TextParser
 from convokit import PolitenessStrategies, Coordination
 import json
 import pandas as pd
+import convokit_processing.conversation as conversation
 from pathlib import Path
 
 
 def main():
-    corpus = Corpus(filename="convokit/test_corpus/")
+    corpus = Corpus(filename="convokit_processing/test_corpus/")
     utt = corpus.get_utterance('1.Pink.1')
     print("RAW TEXT:" + utt.text + "\n")
     print("Sentences: ")
@@ -70,14 +70,29 @@ def getCoordinationScore(corpus, speakerid, targetid=None):
     return coordination
 
 def processCorpus(corpus):
+    parser = TextParser(verbosity=1000)
+    corpus = parser.transform(corpus)
     ps = PolitenessStrategies()
     coord = Coordination()
-    corpus = ps.transform(corpus)
+    corpus = ps.transform(corpus, markers=True)
     corpus = coord.fit_transform(corpus)
     return corpus
 
+def get_scores_from_audio(filename: Path):
+    #corpus = conversation.dump_transcript(filename, Path("convokit/transcripts/output.json"))
+    corpus = conversation.assemble_corpus(Path("convokit_processing/transcripts/output.json"))
+    corpus = processCorpus(corpus)
+    pscore1 = getPolitenessScores(corpus, "1")
+    pscore2 = getPolitenessScores(corpus, "2")
+    pscore1.name = "1"
+    pscore2.name = "2"
+    cscore1 = getCoordinationScore(corpus, "1", "2")
+    cscore2 = getCoordinationScore(corpus, "2", "1")
+    pscore1._set_value("coordination", cscore1)
+    pscore2._set_value("coordination", cscore2)
+    scores = pscore1.to_frame().join(pscore2)
+    return scores
+
 if __name__ == "__main__":
-    corpus = Corpus("convokit/test_corpus")
-    pscore= getPolitenessScores(corpus, "1.Pink")
-    cscore = getCoordinationScore(corpus, "1.Blue", "1.Pink")
-    print(pscore, cscore)
+    scores = get_scores_from_audio(Path("convokit_processing/audio/long.wav"))
+    print(scores)
