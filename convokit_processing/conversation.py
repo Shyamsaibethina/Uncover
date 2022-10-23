@@ -2,15 +2,16 @@ import json
 from pathlib import Path
 
 import pandas as pd
-from convokit import Coordination, Corpus, Speaker, Utterance
+from convokit import Corpus
 from google.cloud import speech
+from pydub import AudioSegment
 
 
 def dump_transcript(in_file: Path, out_file: Path) -> None:
     """Get transcript from Google Speech-to-Text API"""
     client = speech.SpeechClient()
 
-    content = Path("long.wav").read_bytes()
+    content = Path(in_file).read_bytes()
     audio = speech.RecognitionAudio(content=content)
 
     diarization_config = speech.SpeakerDiarizationConfig(
@@ -42,22 +43,27 @@ def dump_transcript(in_file: Path, out_file: Path) -> None:
     with out_file.open("w") as f:
         json.dump(conversation, f, indent=2)
 
+
 def assemble_corpus(out_file: Path) -> Corpus:
     """Assemble corpus from annotated transcript"""
-    conversation = json.load(out_file.open())   
+    conversation = json.load(out_file.open())
     df = pd.DataFrame(conversation)
     df["id"] = df.index
     df["speaker"] = df["speaker"].astype(str)
     df["reply_to"] = df.apply(lambda x: "2" if x["speaker"] == "1" else "1", axis=1)
-    df["conversation_id"] = 1   
-    df.rename(columns={"word":"text", "start":"timestamp"}, inplace=True)
+    df["conversation_id"] = 1
+    df.rename(columns={"word": "text", "start": "timestamp"}, inplace=True)
     return Corpus.from_pandas(df)
 
+
 if __name__ == "__main__":
-  in_file = Path("audio/long.wav")
-  out_file = Path("transcripts/output.json")
+    in_file = Path("audio/input.mp3")
+    sound = AudioSegment.from_wav(in_file)
+    sound.export("audio/input.wav", format="wav")
 
-  if not out_file.exists():
-    dump_transcript(in_file, out_file)
+    out_file = Path("transcripts/output.json")
 
-  corpus = assemble_corpus(out_file)
+    if not out_file.exists():
+        dump_transcript(in_file, out_file)
+
+    corpus = assemble_corpus(out_file)
