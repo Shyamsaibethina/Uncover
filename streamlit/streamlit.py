@@ -38,13 +38,13 @@ if __name__ == "__main__":
         return encoded
 
     def img_to_htmlTitle(img_path):
-        img_html = "<img src='data:image/png;base64,{}' class='img-fluid' width='750' style='vertical-align:middle;margin:0px -10px; margin-top: -100px'>".format(
+        img_html = "<img src='data:image/jpeg;base64,{}' class='img-fluid' width='750' style='vertical-align:middle;margin:0px -10px; margin-top: -100px'>".format(
             img_to_bytes(img_path)
         )
         return img_html
 
     def img_to_htmlWelcome(img_path):
-        img_html = "<img src='data:image/png;base64,{}' class='img-fluid' width='750' style='horizontal-align:middle;margin:0px 330px; margin-top: -90px'>".format(
+        img_html = "<img src='data:image/jpeg;base64,{}' class='img-fluid' width='750' style='horizontal-align:middle;margin:0px 330px; margin-top: -90px'>".format(
             img_to_bytes(img_path)
         )
         return img_html
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     if st.session_state["authentication_status"]:
 
         placeholder.markdown(
-            img_to_htmlWelcome("streamlit/assets/profile.png"), unsafe_allow_html=True
+            img_to_htmlWelcome("streamlit/assets/profile.jpeg"), unsafe_allow_html=True
         )
         name = st.session_state["name"]
 
@@ -131,13 +131,13 @@ if __name__ == "__main__":
             # )
             #st.altair_chart(chart)
             
-            st.bar_chart(df, x='Sai')
+            st.bar_chart(df, x='1', y='2')
             
             
 
         st.markdown(f"<h2 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Team Acme Summary:</h2>", unsafe_allow_html=True)
         
-        names = ['Chinar', 'Teja', 'Christian', 'Sai']
+        names = ['Chinar', 'Teja', 'Christian']
         data = [[1, -0.546456], [2, .06536], [3, .464574]]
         chart_data = pd.DataFrame(data, columns=['Conversation_Id', 'Politeness'])
         for name in names:
