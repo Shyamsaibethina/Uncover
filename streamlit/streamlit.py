@@ -9,6 +9,8 @@ import numpy as np
 import pandas as pd
 import sounddevice as sd
 import wavio
+import glob
+import os
 
 if __name__ == '__main__':
     # ----------------- USER AUTHENTICATION ----
@@ -68,12 +70,23 @@ if __name__ == '__main__':
         if st.button("Click to record"):
             if filename == "":
                 st.warning("Choose a filename.")
-            elif:
+            else:
                 record_state = st.text("Recording...")
-                duration = 10
+                duration = 8
                 fs = 48000
-                record(duration, fs)
+                myrecording = record(duration, fs)
+                record_state.text(f"Saving sample as {filename}.mp3")
 
+                path_myrecording = f"streamlit/samples/{filename}.mp3"
+
+                save_record(path_myrecording, myrecording, fs)
+                record_state.text(f"Done! Saved sample as {filename}.mp3")
+
+                st.audio(read_audio(path_myrecording))
+
+        audio_folder = "streamlit/samples"
+        filenames = glob.glob(os.path.join(audio_folder, "*.mp3"))
+        selected_filename = st.selectbox("Select a file", filenames)
 
         st.markdown(f"<h2 style='text-align: left; color: black; margin-left: -3px'><FONT COLOR='#48064c'>Team Acme:</h2>", unsafe_allow_html=True)
         chart_data = pd.DataFrame(
