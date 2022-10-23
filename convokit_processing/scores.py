@@ -4,7 +4,10 @@ from convokit import TextParser
 from convokit import PolitenessStrategies, Coordination
 import json
 import pandas as pd
-import convokit_processing.conversation as conversation
+try:
+    import convokit_processing.conversation as conversation
+except:
+    import conversation
 from pathlib import Path
 
 
@@ -49,6 +52,7 @@ def getPolitenessScores(corpus, uid):
     ps = PolitenessStrategies()
     data = ps.summarize(corpus, lambda utt: utt.speaker.id == uid)
     politeness = data["feature_politeness_==HASPOSITIVE=="] - data["feature_politeness_==HASNEGATIVE=="]
+    data._set_value("politeness", politeness)
     return data #politeness
 
 def getCoordinationScore(corpus, speakerid, targetid=None):
@@ -78,14 +82,14 @@ def processCorpus(corpus):
     corpus = coord.fit_transform(corpus)
     return corpus
 
-def get_scores_from_audio(filename: Path):
-    #corpus = conversation.dump_transcript(filename, Path("convokit/transcripts/output.json"))
+def get_scores_from_audio(filename: Path, name1="1", name2="2"):
+    #conversation.dump_transcript(filename, Path("convokit/transcripts/output.json"))
     corpus = conversation.assemble_corpus(Path("convokit_processing/transcripts/output.json"))
     corpus = processCorpus(corpus)
     pscore1 = getPolitenessScores(corpus, "1")
     pscore2 = getPolitenessScores(corpus, "2")
-    pscore1.name = "1"
-    pscore2.name = "2"
+    pscore1.name = name1
+    pscore2.name = name2
     cscore1 = getCoordinationScore(corpus, "1", "2")
     cscore2 = getCoordinationScore(corpus, "2", "1")
     pscore1._set_value("coordination", cscore1)
