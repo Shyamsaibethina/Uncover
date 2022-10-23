@@ -1,0 +1,607 @@
+[
+  {
+    "speaker": 2,
+    "word": "hey",
+    "start": 0.9
+  },
+  {
+    "speaker": 2,
+    "word": "Christian",
+    "start": 1.1
+  },
+  {
+    "speaker": 2,
+    "word": "how",
+    "start": 1.5
+  },
+  {
+    "speaker": 2,
+    "word": "are",
+    "start": 1.6
+  },
+  {
+    "speaker": 2,
+    "word": "you",
+    "start": 1.6
+  },
+  {
+    "speaker": 2,
+    "word": "doing",
+    "start": 1.7
+  },
+  {
+    "speaker": 2,
+    "word": "today",
+    "start": 1.9
+  },
+  {
+    "speaker": 1,
+    "word": "amazing",
+    "start": 3.4
+  },
+  {
+    "speaker": 1,
+    "word": "shinar",
+    "start": 4.1
+  },
+  {
+    "speaker": 1,
+    "word": "why",
+    "start": 6.6
+  },
+  {
+    "speaker": 1,
+    "word": "do",
+    "start": 6.7
+  },
+  {
+    "speaker": 1,
+    "word": "you",
+    "start": 6.8
+  },
+  {
+    "speaker": 1,
+    "word": "sound",
+    "start": 6.9
+  },
+  {
+    "speaker": 1,
+    "word": "so",
+    "start": 7.1
+  },
+  {
+    "speaker": 1,
+    "word": "bored",
+    "start": 7.3
+  },
+  {
+    "speaker": 1,
+    "word": "I'm",
+    "start": 11.5
+  },
+  {
+    "speaker": 1,
+    "word": "thinking",
+    "start": 11.7
+  },
+  {
+    "speaker": 1,
+    "word": "of",
+    "start": 12.2
+  },
+  {
+    "speaker": 1,
+    "word": "the",
+    "start": 14.4
+  },
+  {
+    "speaker": 1,
+    "word": "people",
+    "start": 14.5
+  },
+  {
+    "speaker": 1,
+    "word": "that",
+    "start": 14.8
+  },
+  {
+    "speaker": 1,
+    "word": "I",
+    "start": 15.0
+  },
+  {
+    "speaker": 1,
+    "word": "want",
+    "start": 15.1
+  },
+  {
+    "speaker": 1,
+    "word": "to",
+    "start": 15.3
+  },
+  {
+    "speaker": 1,
+    "word": "kill",
+    "start": 15.4
+  },
+  {
+    "speaker": 2,
+    "word": "that's",
+    "start": 16.9
+  },
+  {
+    "speaker": 2,
+    "word": "great",
+    "start": 17.1
+  },
+  {
+    "speaker": 2,
+    "word": "you",
+    "start": 18.2
+  },
+  {
+    "speaker": 2,
+    "word": "know",
+    "start": 18.2
+  },
+  {
+    "speaker": 2,
+    "word": "it's",
+    "start": 18.4
+  },
+  {
+    "speaker": 2,
+    "word": "weird",
+    "start": 18.7
+  },
+  {
+    "speaker": 2,
+    "word": "that",
+    "start": 18.9
+  },
+  {
+    "speaker": 2,
+    "word": "it's",
+    "start": 19.1
+  },
+  {
+    "speaker": 2,
+    "word": "only",
+    "start": 19.2
+  },
+  {
+    "speaker": 2,
+    "word": "1125",
+    "start": 20.5
+  },
+  {
+    "speaker": 2,
+    "word": "we",
+    "start": 22.0
+  },
+  {
+    "speaker": 2,
+    "word": "still",
+    "start": 22.1
+  },
+  {
+    "speaker": 2,
+    "word": "got",
+    "start": 22.3
+  },
+  {
+    "speaker": 2,
+    "word": "a",
+    "start": 22.4
+  },
+  {
+    "speaker": 2,
+    "word": "few",
+    "start": 22.4
+  },
+  {
+    "speaker": 2,
+    "word": "more",
+    "start": 22.6
+  },
+  {
+    "speaker": 2,
+    "word": "hours",
+    "start": 22.7
+  },
+  {
+    "speaker": 2,
+    "word": "left",
+    "start": 23.0
+  },
+  {
+    "speaker": 2,
+    "word": "in",
+    "start": 23.2
+  },
+  {
+    "speaker": 2,
+    "word": "US",
+    "start": 23.2
+  },
+  {
+    "speaker": 1,
+    "word": "hopefully",
+    "start": 24.1
+  },
+  {
+    "speaker": 1,
+    "word": "API",
+    "start": 26.5
+  },
+  {
+    "speaker": 1,
+    "word": "doesn't",
+    "start": 26.9
+  },
+  {
+    "speaker": 1,
+    "word": "kill",
+    "start": 27.3
+  },
+  {
+    "speaker": 1,
+    "word": "us",
+    "start": 27.4
+  },
+  {
+    "speaker": 1,
+    "word": "first",
+    "start": 27.7
+  },
+  {
+    "speaker": 1,
+    "word": "and",
+    "start": 28.8
+  },
+  {
+    "speaker": 1,
+    "word": "it",
+    "start": 29.0
+  },
+  {
+    "speaker": 1,
+    "word": "certainly",
+    "start": 29.1
+  },
+  {
+    "speaker": 1,
+    "word": "my",
+    "start": 29.4
+  },
+  {
+    "speaker": 1,
+    "word": "that",
+    "start": 31.2
+  },
+  {
+    "speaker": 1,
+    "word": "is",
+    "start": 31.4
+  },
+  {
+    "speaker": 1,
+    "word": "very",
+    "start": 31.5
+  },
+  {
+    "speaker": 1,
+    "word": "true",
+    "start": 31.8
+  },
+  {
+    "speaker": 1,
+    "word": "honestly",
+    "start": 32.1
+  },
+  {
+    "speaker": 2,
+    "word": "although",
+    "start": 33.5
+  },
+  {
+    "speaker": 2,
+    "word": "this",
+    "start": 33.7
+  },
+  {
+    "speaker": 2,
+    "word": "presentation",
+    "start": 33.9
+  },
+  {
+    "speaker": 2,
+    "word": "is",
+    "start": 34.5
+  },
+  {
+    "speaker": 2,
+    "word": "probably",
+    "start": 34.7
+  },
+  {
+    "speaker": 2,
+    "word": "going",
+    "start": 35.0
+  },
+  {
+    "speaker": 2,
+    "word": "to",
+    "start": 35.1
+  },
+  {
+    "speaker": 2,
+    "word": "take",
+    "start": 35.2
+  },
+  {
+    "speaker": 2,
+    "word": "another",
+    "start": 35.6
+  },
+  {
+    "speaker": 2,
+    "word": "two",
+    "start": 36.6
+  },
+  {
+    "speaker": 2,
+    "word": "hours",
+    "start": 37.0
+  },
+  {
+    "speaker": 2,
+    "word": "of",
+    "start": 37.7
+  },
+  {
+    "speaker": 2,
+    "word": "our",
+    "start": 37.8
+  },
+  {
+    "speaker": 2,
+    "word": "time",
+    "start": 37.9
+  },
+  {
+    "speaker": 1,
+    "word": "I",
+    "start": 39.6
+  },
+  {
+    "speaker": 1,
+    "word": "hope",
+    "start": 39.6
+  },
+  {
+    "speaker": 1,
+    "word": "not",
+    "start": 39.9
+  },
+  {
+    "speaker": 2,
+    "word": "let's",
+    "start": 41.6
+  },
+  {
+    "speaker": 2,
+    "word": "see",
+    "start": 41.8
+  },
+  {
+    "speaker": 2,
+    "word": "how",
+    "start": 41.9
+  },
+  {
+    "speaker": 2,
+    "word": "quickly",
+    "start": 42.0
+  },
+  {
+    "speaker": 2,
+    "word": "we",
+    "start": 42.3
+  },
+  {
+    "speaker": 2,
+    "word": "can",
+    "start": 42.4
+  },
+  {
+    "speaker": 2,
+    "word": "get",
+    "start": 42.6
+  },
+  {
+    "speaker": 2,
+    "word": "this",
+    "start": 42.7
+  },
+  {
+    "speaker": 2,
+    "word": "whole",
+    "start": 42.9
+  },
+  {
+    "speaker": 2,
+    "word": "thing",
+    "start": 43.0
+  },
+  {
+    "speaker": 2,
+    "word": "done",
+    "start": 43.2
+  },
+  {
+    "speaker": 2,
+    "word": "so",
+    "start": 44.2
+  },
+  {
+    "speaker": 2,
+    "word": "true",
+    "start": 44.4
+  },
+  {
+    "speaker": 2,
+    "word": "you",
+    "start": 45.8
+  },
+  {
+    "speaker": 2,
+    "word": "should",
+    "start": 46.0
+  },
+  {
+    "speaker": 2,
+    "word": "talk",
+    "start": 46.1
+  },
+  {
+    "speaker": 2,
+    "word": "more",
+    "start": 46.3
+  },
+  {
+    "speaker": 2,
+    "word": "so",
+    "start": 46.5
+  },
+  {
+    "speaker": 2,
+    "word": "you",
+    "start": 46.6
+  },
+  {
+    "speaker": 2,
+    "word": "have",
+    "start": 46.8
+  },
+  {
+    "speaker": 2,
+    "word": "more",
+    "start": 46.9
+  },
+  {
+    "speaker": 2,
+    "word": "context",
+    "start": 47.0
+  },
+  {
+    "speaker": 2,
+    "word": "that",
+    "start": 48.2
+  },
+  {
+    "speaker": 2,
+    "word": "is",
+    "start": 48.4
+  },
+  {
+    "speaker": 2,
+    "word": "very",
+    "start": 48.5
+  },
+  {
+    "speaker": 2,
+    "word": "true",
+    "start": 48.8
+  },
+  {
+    "speaker": 1,
+    "word": "Industrial",
+    "start": 50.7
+  },
+  {
+    "speaker": 1,
+    "word": "Revolution",
+    "start": 51.2
+  },
+  {
+    "speaker": 1,
+    "word": "and",
+    "start": 52.0
+  },
+  {
+    "speaker": 1,
+    "word": "its",
+    "start": 52.2
+  },
+  {
+    "speaker": 1,
+    "word": "consequences",
+    "start": 52.3
+  },
+  {
+    "speaker": 1,
+    "word": "of",
+    "start": 53.0
+  },
+  {
+    "speaker": 1,
+    "word": "been",
+    "start": 53.1
+  },
+  {
+    "speaker": 1,
+    "word": "a",
+    "start": 53.3
+  },
+  {
+    "speaker": 1,
+    "word": "disaster",
+    "start": 53.3
+  },
+  {
+    "speaker": 1,
+    "word": "for",
+    "start": 53.9
+  },
+  {
+    "speaker": 1,
+    "word": "the",
+    "start": 54.0
+  },
+  {
+    "speaker": 1,
+    "word": "human",
+    "start": 54.1
+  },
+  {
+    "speaker": 1,
+    "word": "race",
+    "start": 54.4
+  },
+  {
+    "speaker": 1,
+    "word": "but",
+    "start": 56.1
+  },
+  {
+    "speaker": 1,
+    "word": "we",
+    "start": 56.3
+  },
+  {
+    "speaker": 1,
+    "word": "worry",
+    "start": 56.4
+  },
+  {
+    "speaker": 1,
+    "word": "about",
+    "start": 56.6
+  },
+  {
+    "speaker": 1,
+    "word": "that",
+    "start": 56.8
+  }
+]
